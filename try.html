@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .paper-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .paper-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding: 12px;
+            border: 1.5px solid #333;
+            border-radius: 28px;
+            cursor: pointer;
+            background: white;
+            transition: border-color .2s, box-shadow .2s;
+        }
+
+        .paper-card input {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .paper-card:has(input:checked) {
+            border: 2px solid #52765d;
+            box-shadow: 0 0 0 3px #52765d20;
+        }
+
+        .checkmark {
+            display: none;
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            width: 34px;
+            height: 34px;
+            border: 1.5px solid #52765d;
+            border-radius: 50%;
+            background: white;
+            color: #52765d;
+            text-align: center;
+            line-height: 31px;
+        }
+
+        .paper-card:has(input:checked) .checkmark {
+            display: block;
+        }
+
+        .paper-preview {
+            width: 100%;
+            aspect-ratio: 0.72;
+            border-radius: 18px;
+            background: #f7f8f5;
+        }
+
+        .preview-a5 {
+            background-image: linear-gradient(#e5e9e2 1px, transparent 1px);
+        }
+
+        .preview-a4 {
+            background-image: linear-gradient(#e5e9e2 1px, transparent 1px);
+        }
+
+        .preview-a3 {
+            background-image: linear-gradient(#e5e9e2 1px, transparent 1px);
+        }
+
+        .paper-card small {
+            color: #747b73;
+        }
+
+        .paper-card:focus-within {
+            outline: 3px solid #b9d1bd;
+            outline-offset: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="paper-grid">
+        <label class="paper-card">
+            <input type="radio" name="paperSize" value="A5">
+            <span class="checkmark">✓</span>
+            <div class="paper-preview preview-a5"></div>
+            <strong>A5</strong>
+            <small>148 × 210 mm</small>
+        </label>
+
+        <label class="paper-card">
+            <input type="radio" name="paperSize" value="A4" checked>
+            <span class="checkmark">✓</span>
+            <div class="paper-preview preview-a4"></div>
+            <strong>A4</strong>
+            <small>210 × 297 mm</small>
+        </label>
+
+        <label class="paper-card">
+            <input type="radio" name="paperSize" value="A3">
+            <span class="checkmark">✓</span>
+            <div class="paper-preview preview-a3"></div>
+            <strong>A3</strong>
+            <small>297 × 420 mm</small>
+        </label>
+    </div>
+</body>
+
+</html>
