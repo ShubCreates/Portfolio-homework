@@ -94,7 +94,7 @@ li:hover::before{
     
 }
 .name{
-    font-size: 3rem;
+    font-size: 2rem;
     font-family: "Stack Sans Notch", sans-serif;
     color: var(--txt-color);
 }
@@ -108,10 +108,10 @@ main {
     width: 100%;
     grid-template-columns: 1fr 1fr;
     place-items: center;
+    margin: .5rem 0;
 }
 .description-logo img{
     width: 100%;
-    /* visibility: hidden; */
 }
 footer{
     grid-area: footer;
@@ -244,10 +244,7 @@ ul#nav > li:hover > a, footer > a:hover,
 }
 
 
-/* Responsive */
-@media (max-width: 1024px) { .masonry { column-count: 3; } }
-@media (max-width: 700px)  { .masonry { column-count: 2; } }
-/* @media (max-width: 450px)  { .masonry { column-count: 1; } } */
+
 
 
 
@@ -456,3 +453,13 @@ hr{
 #card-bottom-left{
     font-size: .85rem;
 }
+
+
+
+
+
+
+/* Responsive */
+@media (max-width: 1024px) { .masonry { column-count: 3; } }
+@media (max-width: 700px)  { .masonry { column-count: 2; } }
+/* @media (max-width: 450px)  { .masonry { column-count: 1; } } */
